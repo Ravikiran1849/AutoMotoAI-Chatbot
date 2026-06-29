@@ -97,7 +97,3 @@ AI_Chatbot_Project/
 | `/`      | GET    | Serves the chat interface |
 | `/chat`  | POST   | Processes user message and returns AI response with sentiment and explanation |
 | `/reset` | POST   | Resets conversation history and user profile |
-
-## License
-
-This project is for academic and educational purposes.
