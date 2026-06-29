@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMotoAI – Smart Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">🏎️ AutoMotoAI</div>
+                <p class="tagline">Personalized · Sentiment-Aware · Explainable</p>
+            </div>
+            <div class="sidebar-section">
+                <h3>Sentiment Monitor</h3>
+                <div id="sentimentDisplay" class="sentiment-box">
+                    <span class="sentiment-emoji">😐</span>
+                    <span class="sentiment-label">Awaiting input...</span>
+                </div>
+                <div id="sentimentMeter" class="meter-container">
+                    <div class="meter-bar" id="meterBar" style="width:50%"></div>
+                </div>
+                <div class="meter-labels">
+                    <span>Negative</span><span>Positive</span>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3>Why This Response?</h3>
+                <div id="explanationBox" class="explanation-box">
+                    <p>Explanations will appear here after your first message.</p>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3>Your Profile</h3>
+                <div id="profileBox" class="profile-box">
+                    <p>Start chatting to build your profile.</p>
+                </div>
+            </div>
+            <button id="resetBtn" class="reset-btn">🔄 Reset Conversation</button>
+        </aside>
+
+        <!-- Chat Area -->
+        <main class="chat-area">
+            <div class="chat-header">
+                <h1>AutoMotoAI Assistant</h1>
+                <p>AI-Powered Chatbot for Automotive & Motorsport Engagement</p>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Welcome to <strong>AutoMotoAI</strong>! I'm your intelligent assistant for everything
+                        automotive and motorsport. Whether you want to compare cars, discuss the latest F1 race,
+                        or get maintenance tips — I'm here to help.</p>
+                        <p>I adapt to your preferences, understand your mood, and always explain my reasoning.
+                        What would you like to talk about?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="Ask about cars, racing, EVs, or anything automotive..."
+                              rows="1"></textarea>
+                    <button id="sendBtn" class="send-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
